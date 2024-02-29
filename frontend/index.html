@@ -3,27 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<!-- UIkit CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/css/uikit.min.css" />
-<!-- UIkit JS -->
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/js/uikit.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/js/uikit-icons.min.js"></script>
 <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
 <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script> 
-<script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
+<script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
 </head>
 <body>
-  <header id="home-header"></header>
-  <main id="home-main" class="container">
+  <header id="home-header" class="page-header" role="header"></header>
+  <main id="home-main" class="page-main" role="main">
     <div id="home-heading" class="page-heading">
       <h1>Home</h1>
     </div>
-    <h1></h1>
-    <a href="/pages/login.html"></a>
-
+    <div id="home-container" class="container">
+      <a class="link" href="/pages/login.html">Login</a>
+      <a class="link" href="/pages/register.html">Register</a>
+    </div>
   </main>
-  <footer id="home-footer">
+  <footer id="home-footer" class="page-footer" role="footer">
   
   </footer>
   <div id="divider"><!--- Script Section ---></div>

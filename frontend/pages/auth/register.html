@@ -11,73 +11,75 @@
 <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
 <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script> 
 <script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
-<script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
 </head>
 <body>
-  <header id="register-header">
+  <header id="register-header" class="page-header" role="header">
+    <!---- Banner Image or Banner Ads ---->
   </header> 
-  <main id="register-main" class="container" role="main">
+  <main id="register-main" class="page-main" role="main">
     <div id="register-heading" class="page-heading">
       <h1 class="heading-text">Login</h1>
     </div>
-    <form id="registration-form" hx-post="/register">
-      <label for="username">Username:</label>
-      <input type="text" 
-        id="register-username"         
-        name="username" 
-        type="username"
-        class="form-control" 
-        placeholder="Enter username..."
-        required
-      />
-      <label for="email">Email Address:</label>
-      <input 
-        id="register-email"       
-        name="email" 
-        type="email" 
-        class="form-control"
-        placeholder="Enter email..."
-        required 
-      />
-      <label for="password">Password:</label>
-      <input 
-        id="register-password" 
-        name="password" 
-        type="password"         
-        class="form-control" 
-        placeholder="Enter password..."
-        required 
-      />
-      <label for="confirm-password">Confirm Password:</label>
-      <input 
-        id="register-confirm-password"         
-        name="confirm-password" 
-        type="password"
-        class="form-control" 
-        placeholder="Confirm password..."
-        required
-      />
-      <label for="confirm-tos">
-        By checking this box I agree that<br>
-        I have read and agree with the<br>
-        <a href="/terms_and_conditions">
-          Terms and Conditions
-        </a>
-        <input 
-          id="confirm-tos" 
-          name="confirm-tos"
-          class="form-control-checkbox" 
-          type="checkbox"
+    <div id="register-container" class="container">
+      <form id="registration-form" hx-post="/register">
+        <label for="username">Username:</label>
+        <input type="text" 
+          id="register-username"         
+          name="username" 
+          type="username"
+          class="form-control" 
+          placeholder="Enter username..."
           required
         />
-      </label>
-      <input 
-        id="register-submit" 
-        type="submit" 
-        class="uk-button uk-button-primary"
-        value="Submit"
-      />
-    </form>
+        <label for="email">Email Address:</label>
+        <input 
+          id="register-email"       
+          name="email" 
+          type="email" 
+          class="form-control"
+          placeholder="Enter email..."
+          required 
+        />
+        <label for="password">Password:</label>
+        <input 
+          id="register-password" 
+          name="password" 
+          type="password"         
+          class="form-control" 
+          placeholder="Enter password..."
+          required 
+        />
+        <label for="confirm-password">Confirm Password:</label>
+        <input 
+          id="register-confirm-password"         
+          name="confirm-password" 
+          type="password"
+          class="form-control" 
+          placeholder="Confirm password..."
+          required
+        />
+        <label for="confirm-tos">
+          By checking this box I agree that<br>
+          I have read and agree with the<br>
+          <a href="/terms_and_conditions">
+            Terms and Conditions
+          </a>
+          <input 
+            id="confirm-tos" 
+            name="confirm-tos"
+            class="form-control-checkbox" 
+            type="checkbox"
+            required
+          />
+        </label>
+        <input 
+          id="register-submit" 
+          type="submit" 
+          class="uk-button uk-button-primary"
+          value="Submit"
+        />
+      </form>
+    </div>
   </main>
   <footer id="register-footer">
   

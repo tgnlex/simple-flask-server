@@ -14,39 +14,42 @@
 <script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
 </head>
 <body>
-  <header id="login-header" role="header">
+  <header id="login-header" class="page-header" role="header">
+      <!---- Banner Image or Banner Ads ---->
   </header>
-  <main id="login-main" role="main">
+  <main id="login-main" class="page-main" role="main">
     <div id="login-heading" class="page-heading">
       <h1 class="heading-text">Login</h1>
     </div>
-    <form id="login-form" hx-post="/login">
-      <label for="email">Email Address:</label>
-      <input 
-      id="login-email" 
-      name="email" 
-      type="email"
-      class="form-control"
-      placeholder="Enter email..."
-      required 
-      />
-      <label for="password">Password:</label>
-      <input 
-      id="login-password" 
-      name="password" 
-      type="password"
-      class="form-control"
-      placeholder="Enter your password..."
-      required />
-      <input 
-        id="login-submit" 
-        type="submit" 
-        class="uk-button uk-button-primary"
-        value="Submit"
-      />
-    </form>
+    <div id="login-container" class="container">
+      <form id="login-form" class="auth-form" hx-post="/login">
+        <label for="email">Email Address:</label>
+        <input 
+        id="login-email" 
+        name="email" 
+        type="email"
+        class="form-control"
+        placeholder="Enter email..."
+        required 
+        />
+        <label for="password">Password:</label>
+        <input 
+        id="login-password" 
+        name="password" 
+        type="password"
+        class="form-control"
+        placeholder="Enter your password..."
+        required />
+        <input 
+          id="login-submit" 
+          type="submit" 
+          class="uk-button uk-button-primary"
+          value="Submit"
+        />
+      </form>
+    </div>
   </main>
-  <footer id="login-footer" role="footer">
+  <footer id="login-footer" class="page-footer" role="footer">
   
   </footer>
   <div id="divider"><!--- Script Section ---></div>
