@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<!-- UIkit CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/css/uikit.min.css" />
+<!-- UIkit JS -->
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/js/uikit-icons.min.js"></script>
+<link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
+<script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script> 
+<script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
+<script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
+</head>
+<body>
+  <header id="login-header" role="header">
+  </header>
+  <main id="login-main" role="main">
+    <div id="login-heading" class="page-heading">
+      <h1 class="heading-text">Login</h1>
+    </div>
+    <form id="login-form" hx-post="/login">
+      <label for="email">Email Address:</label>
+      <input 
+      id="login-email" 
+      name="email" 
+      type="email"
+      class="form-control"
+      placeholder="Enter email..."
+      required 
+      />
+      <label for="password">Password:</label>
+      <input 
+      id="login-password" 
+      name="password" 
+      type="password"
+      class="form-control"
+      placeholder="Enter your password..."
+      required />
+      <input 
+        id="login-submit" 
+        type="submit" 
+        class="uk-button uk-button-primary"
+        value="Submit"
+      />
+    </form>
+  </main>
+  <footer id="login-footer" role="footer">
+  
+  </footer>
+  <div id="divider"><!--- Script Section ---></div>
+    <script type="mpy" src="./src/main.py"></script>  
+    <script type="py" src="./src/worker.py" config="pyconfig.toml" worker></script>
+  </body>
+</html>

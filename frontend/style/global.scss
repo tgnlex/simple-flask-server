@@ -1,0 +1,18 @@
+@import '/vars/colors.scss';
+
+.container {
+  display: flex;
+  flex-direction: column !important;
+}
+.heading-text {
+  text-decoration: none;
+  color: black;
+}
+
+.link {
+  text-decoration: none;
+}
+.btn {
+ padding: 0.5em 0.5em;
+}
+
