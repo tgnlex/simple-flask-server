@@ -1,15 +1,23 @@
 # Library Imports
-from flask import Flask, session, request, render_template, make_response, redirect, url_for, redirect 
-
+from flask import Flask, render_template, session, request, flash, redirect, make_response, url_for, send_from_directory, send_file, redirect
+import flask_monitoringdashboard as dashboard
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 from markupsafe import escape
+from logger import log
+import logging
+
 # File Imports
 from constants import SECRET_KEY
 
 # Initialize Flask
 app = Flask(__name__)
+dashboard.bind(app)
 app.secret_key = SECRET_KEY
 test_request = app.test_request_context()
+
+#Logging 
+
+
 # Configure Login Manager
 login_manager = LoginManager()
 login_manager.init(app)
@@ -46,7 +54,8 @@ def profile(username):
 @app.post('/profile/<username>/upload')
 def upload_avatar(username):
   file = request.files['avatar']
-  file.save(f"/storage/avatars/{username}.jpg")
+  file.save(f"/storage/avatars/{username}.jpg")  
+  log.info(f'User {username} uploaded their avatar.')
 @app.route('/post/<int:post_id>')
 
 def post(post_id): 
