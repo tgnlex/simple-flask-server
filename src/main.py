@@ -15,7 +15,7 @@ dashboard.bind(app)
 app.secret_key = SECRET_KEY
 test_request = app.test_request_context()
 
-#Logging 
+
 
 
 # Configure Login Manager
