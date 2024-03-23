@@ -1,0 +1,47 @@
+DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS post; 
+
+
+CREATE TABLE avatar (
+  id INTEGER PRIMARY KEY AUTOINCREMENT, 
+  filename text NOT NULL, 
+  
+)
+
+CREATE TABLE user (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  username TEXT UNIQUE NOT NULL, 
+  email TEXT UNIQUE NOT NULL, 
+  password TEXT NOT NULL,
+  avatar_id INTEGER, 
+  FOREIGN KEY avatar_id REFERENCES avatar (id)
+)
+
+CREATE TABLE post (
+  id INTEGER PRIMARY KEY AUTOINCREMENT, 
+  author_id INTEGER NOT NULL, 
+  created TIMESTAMP NOT NULL, 
+  title TEXT NOT NULL, 
+  body TEXT NOT NULL, 
+  FOREIGN KEY (author_id) REFERENCES user (id)
+)
+
+CREATE TABLE comment (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  author_id INTEGER NOT NULL
+  post_id INTEGER NOT NULL, 
+  created TIMETAMP NOT NULL,
+  body TEXT NOT NULL, 
+  FOREIGN KEY (author_id) REFERENCES user (id),
+  FOREIGN KEY (post_id) REFERENCES post (id)
+)
+
+CREATE TABLE message (
+  id INTEGER PRIMARY KEY AUTOINCREMENT, 
+  sender_id INTEGER NOT NULL,
+  recipient_id INTEGER NOT NULL, 
+  sent_at TIMESTAMP NOT NULL, 
+  body TEXT NOT NULL
+  FOREIGN KEY (sender_id) REFERENCES user (id)
+  FOREIGN KEY (recipient_id) REFERENCES user (id)
+)

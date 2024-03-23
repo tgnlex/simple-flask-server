@@ -1,5 +1,5 @@
 from flask import Flask, url_for
-from main import app, test_requests
+from server.main import app, test_requests
 
 
 print(url_for('index'))

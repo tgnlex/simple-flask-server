@@ -3,14 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<!-- UIkit CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/css/uikit.min.css" />
-<!-- UIkit JS -->
-<script src="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/js/uikit.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/js/uikit-icons.min.js"></script>
-<link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
-<script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script> 
-<script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
 <script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
 </head>
 <body>
@@ -22,7 +14,9 @@
       <h1 class="heading-text">Login</h1>
     </div>
     <div id="login-container" class="container">
-      <form id="login-form" class="auth-form" hx-post="/login">
+      <form 
+        id="login-form" 
+        class="auth-form" hx-post="/auth/login">
         <label for="email">Email Address:</label>
         <input 
         id="login-email" 
@@ -49,11 +43,5 @@
       </form>
     </div>
   </main>
-  <footer id="login-footer" class="page-footer" role="footer">
-  
-  </footer>
-  <div id="divider"><!--- Script Section ---></div>
-    <script type="mpy" src="./src/main.py"></script>  
-    <script type="py" src="./src/worker.py" config="pyconfig.toml" worker></script>
-  </body>
+  <footer id="login-footer" class="page-footer" role="footer"></footer>
 </html>

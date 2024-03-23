@@ -1,0 +1,101 @@
+:root {
+  --std-border: 4px solid black;
+}
+html, 
+body {
+  width: 100%;
+  height: 100%;
+}
+.top {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-items: center;
+  place-content: center;  
+}
+.heading {
+  height: 10%;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  place-content: center;
+  border: var(--std-border);
+  border-radius: .4rem;
+  padding: 10px;
+}
+.heading-text {
+  text-decoration: none;
+  color: black;
+}
+.navbar {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  place-content: center;
+  width: 80%;
+  height: 10%;
+}
+.nav-list {
+  display: flex;
+  border: var(--std-border);
+  border-radius: .4rem;
+  flex-direction: row;
+  align-items: center;
+  justiy-items: center;
+  align-content: center;
+  justify-content: center;
+  list-style-type: none;
+  padding: 10px, 0;
+
+}
+.nav-item {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  border: var(--std-border);
+  padding:0 30px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.nav-link {
+  text-decoration: none;
+}
+.nav-text {
+  font-size: 1.25em;
+  font-weight: 400
+}
+#app { 
+  width: 100%;
+  height: 100%;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+.text {
+  font-size: 1.25em;
+  font-weight: 400;
+}
+.link {
+  text-decoration: none;
+}
+.btn {
+ padding: 0.5em 0.5em;
+ border-radius: .4rem;
+ border: 2px black solid;
+}
+
+.warning, 
+.btn-warning {
+  color: white;
+  background-color: red;
+}
+
+.success, 
+.btn-success {
+  color: white;
+  background-color: green;
+}

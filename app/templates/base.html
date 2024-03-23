@@ -1,0 +1,78 @@
+<!doctype html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}" />
+  <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
+</head>
+<body>
+  <header class="top">
+    <div class="heading">
+      <h1 class="heading-text">
+        {% block title %}{% endblock %}
+      </h1>
+    </div>
+    <nav class="navbar">
+      <ul class="navlist">
+        <li class="nav-item">
+          <a class="nav-link" href="/index">
+            <p class="nav-text">
+              Home
+            </p>
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/about">
+            <p class="nav-text">
+              About
+            </p>
+          </a>
+        </li>
+        {% if g.user %}
+          <li class="nav-item">
+            <span class="nav-text-user">{{g.user ['username']}}</span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/auth/logout">
+              <p class="nav-text">
+               Logout 
+              </p>
+            </a>
+          </li>
+        {% else %}
+        <li class="nav-item">
+          <a href="nav-link" href="/register">
+            <p class="nav-text">
+              Register
+            </p>
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/login">
+            <p class="nav-text">
+              Login 
+            </p>
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </ul>
+  </nav>
+  <main id="app" class="container">
+    <div class="content-heading">
+      <h1 class="content-heading-text">
+        {% block content_heading %}{%endblock}
+      </h1>
+    </div>
+    <section class="content">
+      {% block content_left %} {% endblock %}
+      {% block content %} {% endblock %}
+      {% block content_right %} {% endblock $}
+    </section>
+  </main>
+  <hr />
+  <footer class="bottom">
+    {% block footer %}{%endblock%}
+    <span class="footer-text">&copy Copyright</span>
+  </footer>
+</body>
