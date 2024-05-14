@@ -1,6 +1,12 @@
 from flask import session, make_response, request, redirect, url_for
 from src import app
 
+@app.route('/auth')
+def index():
+  if 'username' in session:
+    return f'Logged in as {session['username']}'
+  return 'You are not logged in.'
+
 @app.post('/auth/login')
 def post_register():
   ############################## TODO #########################################
