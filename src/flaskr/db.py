@@ -16,10 +16,12 @@ def init_db():
   with current_app.open_resources('schema.sql') as f:
     db.executescript(f.read().decode('utf8'))
 @click.command('init-db')
+
 def init_db_command():
   """Clear the existing DATA and create new tables"""
   init_db()
   click.echo('Initialized the database')
+
   
 def close_db(e=None):
   db = g.pop('db', None)

@@ -1,0 +1,50 @@
+<nav class="navbar">
+  <ul class="navlist">
+    <li class="nav-item">
+      <a class="nav-link" href="/index">
+        <p class="nav-text">
+          Home
+        </p>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/blog/index">
+        Blog
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/about">
+        <p class="nav-text">
+          About
+        </p>
+      </a>
+    </li>
+    {% if g.user %}
+      <li class="nav-item">
+        <span class="nav-text-user">{{g.user ['username']}}</span>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/auth/logout">
+          <p class="nav-text">
+          Logout 
+          </p>
+        </a>
+      </li>
+    {% else %}
+    <li class="nav-item">
+      <a href="nav-link" href="/register">
+        <p class="nav-text">
+          Register
+        </p>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/login">
+        <p class="nav-text">
+          Login 
+        </p>
+      </a>
+    </li>
+    {% endif %}
+  </ul>
+</nav>

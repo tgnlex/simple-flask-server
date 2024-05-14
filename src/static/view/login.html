@@ -17,6 +17,15 @@
       <form 
         id="login-form" 
         class="auth-form" hx-post="/auth/login">
+        <label for="username">Email Address:</label>
+        <input 
+        id="login-username" 
+        name="username" 
+        type="text"
+        class="form-control"
+        placeholder="Enter your username..."
+        required 
+        />
         <label for="email">Email Address:</label>
         <input 
         id="login-email" 

@@ -1,0 +1,30 @@
+<!doctype html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}" />
+  <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
+</head>
+<body>
+  <header class="top">
+    <div class="heading">
+      <h1 class="heading-text">
+        {% block title %}{% endblock %}
+      </h1>
+    </div>
+
+     
+
+  </header>
+  <main id="app" class="container">
+   
+
+  </main>
+  <hr />
+  <footer class="bottom">
+    {% block footer %}{%endblock%}
+    <span class="footer-text">&copy Copyright</span>
+  </footer>
+</body>
